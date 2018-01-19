@@ -14,6 +14,17 @@
  * http://www.sojamo.de/libraries/controlP5/
  * 
  ********************************************************/
+ /* Updates /Infos to v_04:
+ - In line 102, set the index of your tty list to the one your sending Arduino is connected to. 
+ The Processing console lists all Serial ports at the very beginning.
+ 
+ - making Setpoint/Input/Output changeable in the UI without Crashes
+ 
+ - replaced a couple of valueLabel with getValueLabel for latest P5 compatability
+ 
+ */
+ 
+ 
 
 import java.nio.ByteBuffer;
 import processing.serial.*;
@@ -93,7 +104,7 @@ void setup()
   myPort.bufferUntil(10);                                           //   the Arduino
 
   controlP5 = new ControlP5(this);                                  // * Initialize the various
-  SPField= controlP5.addTextfield("SetpointSetter",10,100,60,20).setInputFilter(ControlP5.FLOAT);                       //   Buttons, Labels, and
+  SPField= controlP5.addTextfield("SetpointSetter",10,100,60,20).setInputFilter(ControlP5.FLOAT);         //   Buttons, Labels, and
   InField = controlP5.addTextfield("InputSetter",10,150,60,20).setInputFilter(ControlP5.FLOAT);           //   Text Fields we'll be
   OutField = controlP5.addTextfield("OutputSetter",10,200,60,20).setInputFilter(ControlP5.FLOAT);         //   using
   PField = controlP5.addTextfield("Kp (Proportional)",10,275,60,20);//
