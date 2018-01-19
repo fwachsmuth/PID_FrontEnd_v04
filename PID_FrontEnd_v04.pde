@@ -33,8 +33,8 @@ import controlP5.*;
 /***********************************************
  * User spcification section
  **********************************************/
-int windowWidth = 900;      // set the size of the 
-int windowHeight = 600;     // form
+int windowWidth = 1280;      // set the size of the 
+int windowHeight = 1024;     // form
 
 float InScaleMin = 0;       // set the Y-Axis Min
 float InScaleMax = 1024;    // and Max for both
@@ -97,7 +97,7 @@ PFont AxisFont, TitleFont;
 void setup()
 {
   frameRate(30);
-  size(1024 , 768);
+  size(1280 , 1024);
 
   println(Serial.list());                                           // * Initialize Serial
   myPort = new Serial(this, Serial.list()[3], 9600);                //   Communication with
